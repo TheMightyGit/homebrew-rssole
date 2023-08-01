@@ -10,7 +10,7 @@ class Rssole < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Darwin_x86_64.tar.gz"
-      sha256 "893881f2990252e41261abbe57aba62fa4e4f62e0b1a97ca627c61655346cb07"
+      sha256 "8af3271bd43f6f621d13b0db6900b2f6a3fad85b51c4c92b65cee87986c7a7a2"
 
       def install
         bin.install "rssole"
@@ -18,7 +18,7 @@ class Rssole < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Darwin_arm64.tar.gz"
-      sha256 "dba6aa94a664530405389136fd748d63c18ba4647cc732b02bd72122d8c36697"
+      sha256 "e0a99aebdaa300e71986c2cdb95b7e4e01cde00b1e73a49da6ef148b6139263a"
 
       def install
         bin.install "rssole"
@@ -27,17 +27,17 @@ class Rssole < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_arm64.tar.gz"
-      sha256 "44aea56b90283b844931fe6a85585125fb3a72a97669c8ae6d4504df8f0ff099"
+    if Hardware::CPU.intel?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_x86_64.tar.gz"
+      sha256 "a49d33f6b76f5d52f606748595c3d5f2141043fa65645d8568704cb00c7daadf"
 
       def install
         bin.install "rssole"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_x86_64.tar.gz"
-      sha256 "17679580b5ba41e9e18c6222c4ad39d79e11653112467a9b160fe390f3f8e16a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_arm64.tar.gz"
+      sha256 "53f630eac230254cea3ee0546ea849b5f0eb39d32f5f0d3e602c76085f859943"
 
       def install
         bin.install "rssole"
