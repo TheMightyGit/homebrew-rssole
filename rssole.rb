@@ -6,20 +6,38 @@ class Rssole < Formula
   desc "An RSS Reader inspired by the late Google Reader."
   homepage "https://github.com/TheMightyGit/rssole/"
   version "0.1.4"
-  depends_on :linux
 
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_arm64.tar.gz"
-      sha256 "b2c41501080007c746137c2826e1022eb849d698accb040fa8e01017e2943b66"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Darwin_x86_64.tar.gz"
+      sha256 "4689ba9e171eb54796c90dfb3df1ff5bf6dd87bffd0b06c214b8141709c172b8"
 
       def install
         bin.install "rssole"
       end
     end
+    if Hardware::CPU.arm?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Darwin_arm64.tar.gz"
+      sha256 "a5e889fea43cf965d232e81dbfb3d9214ba18d21d0703b478792d4d44de9ceaf"
+
+      def install
+        bin.install "rssole"
+      end
+    end
+  end
+
+  on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_x86_64.tar.gz"
-      sha256 "9025f8f2ceaa65e1657682ab22797c00fa9aaffead3ac1f2b9dc373e1d6389cb"
+      sha256 "c19b5fa7c42d1dba5b414bb0d846855029105750b4a9f33e7042d371e6e109aa"
+
+      def install
+        bin.install "rssole"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.4/rssole_Linux_arm64.tar.gz"
+      sha256 "b732a2a382b51cee4f786040d8443f64a9fc79eb58090eb375522d0dd9902331"
 
       def install
         bin.install "rssole"
