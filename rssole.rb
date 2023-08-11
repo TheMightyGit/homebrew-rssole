@@ -5,21 +5,21 @@
 class Rssole < Formula
   desc "An RSS Reader inspired by the late Google Reader."
   homepage "https://github.com/TheMightyGit/rssole/"
-  version "0.1.10"
+  version "0.1.11"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.10/rssole_Darwin_arm64.tar.gz"
-      sha256 "9696be070add1c13bc2cfdae8ff994cab0df6537724d84f80b83d3e1f374b22f"
+    if Hardware::CPU.intel?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.11/rssole_Darwin_x86_64.tar.gz"
+      sha256 "4f3656750f99605de87fc354e52470debbd8032d9ee14fc6e00f300bab810622"
 
       def install
         bin.install "rssole"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.10/rssole_Darwin_x86_64.tar.gz"
-      sha256 "ed4deaa326337857ab4c3967497c88f003496352f5d2fb3896814045de219635"
+    if Hardware::CPU.arm?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.11/rssole_Darwin_arm64.tar.gz"
+      sha256 "2e2704aa3ad569eb00a2ca304516816938f466dde3d549912f12ddc1815a3539"
 
       def install
         bin.install "rssole"
@@ -28,17 +28,17 @@ class Rssole < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.10/rssole_Linux_x86_64.tar.gz"
-      sha256 "1e912e5ae3e838a838c709053879435b763f4c487f8cb095cc5e222b9c20160e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.11/rssole_Linux_arm64.tar.gz"
+      sha256 "230b2d4795f0fc51b2fd3a60b27a9b4e53580ed8915d33e8d8a933ef6ea1649b"
 
       def install
         bin.install "rssole"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.10/rssole_Linux_arm64.tar.gz"
-      sha256 "18d2f99d7e13c4349e290127a67be3fbadbafda3aaf7068ef619de3dc3bf82f5"
+    if Hardware::CPU.intel?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.11/rssole_Linux_x86_64.tar.gz"
+      sha256 "8147347c15a98df708f63e8d3be1bc4042c2e9f4ac5c361454a6c6a3818053bf"
 
       def install
         bin.install "rssole"
