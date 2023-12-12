@@ -5,21 +5,21 @@
 class Rssole < Formula
   desc "An RSS Reader inspired by the late Google Reader."
   homepage "https://github.com/TheMightyGit/rssole/"
-  version "0.1.16"
+  version "0.1.17"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.16/rssole_Darwin_x86_64.tar.gz"
-      sha256 "4a2359363f99de9df3f26b2d0c9cfb79c03441c5395f3123fcb359dcaa79a304"
+    if Hardware::CPU.arm?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.17/rssole_Darwin_arm64.tar.gz"
+      sha256 "94cb7b9e7158d5254101d0a893643c358c6ee4f39bb3e9ed7892d52686e84b74"
 
       def install
         bin.install "rssole"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.16/rssole_Darwin_arm64.tar.gz"
-      sha256 "963df6ad028d33864755675edd185cdabf2caa97e08feaa4011b37de5678ddcd"
+    if Hardware::CPU.intel?
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.17/rssole_Darwin_x86_64.tar.gz"
+      sha256 "3cb2cec7077945e0327da68e1921b0b0930c5103f099a5290aee2f1ebdcfddf7"
 
       def install
         bin.install "rssole"
@@ -29,16 +29,16 @@ class Rssole < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.16/rssole_Linux_arm64.tar.gz"
-      sha256 "85bff8e4a6637b4dd89fdf210a79ea07b0501fc58213e46d37b71b4560c5e445"
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.17/rssole_Linux_arm64.tar.gz"
+      sha256 "406705e6724d16148c552999381b65b1455d930fde3973fdfbd8366e92143640"
 
       def install
         bin.install "rssole"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.16/rssole_Linux_x86_64.tar.gz"
-      sha256 "01b6ab92abe39d671f33ae41c21f9261e085489b999ebc451a4716850e0519ac"
+      url "https://github.com/TheMightyGit/rssole/releases/download/v0.1.17/rssole_Linux_x86_64.tar.gz"
+      sha256 "13d23e9182eccc0fc9441ebf447a034791a14c9cf253b2fd1ca19d29dc4a1269"
 
       def install
         bin.install "rssole"
